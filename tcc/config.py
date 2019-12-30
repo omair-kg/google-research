@@ -29,7 +29,7 @@ CONFIG = edict()
 # ******************************************************************************
 
 # Directory for the experiment logs.
-CONFIG.LOGDIR = '/tmp/alignment_logs/'
+CONFIG.LOGDIR = '/export/data/tmilbich/omair_data/alignment_logs/'
 # Dataset for training alignment.
 # Check dataset_splits.py for full list.
 CONFIG.DATASETS = [
@@ -50,7 +50,7 @@ CONFIG.DATASETS = [
 ]
 
 # Path to tfrecords.
-CONFIG.PATH_TO_TFRECORDS = '/tmp/%s_tfrecords/'
+CONFIG.PATH_TO_TFRECORDS = '/export/data/tmilbich/omair_data/penn_action_tf_records/tf_records_penn_action/%s_tfrecords/'
 # Algorithm used for training: alignment, sal, alignment_sal_tcn,
 # classification, tcn . (alignment is called tcc in paper)
 CONFIG.TRAINING_ALGO = 'alignment'
@@ -123,7 +123,7 @@ CONFIG.MODEL.TRAIN_BASE = 'only_bn'
 CONFIG.MODEL.TRAIN_EMBEDDING = True
 
 # pylint: disable=line-too-long
-CONFIG.MODEL.RESNET_PRETRAINED_WEIGHTS = '/tmp/resnet50v2_weights_tf_dim_ordering_tf_kernels_notop.h5'
+CONFIG.MODEL.RESNET_PRETRAINED_WEIGHTS = '/export/data/tmilbich/omair_data/tcc_model/resnet50v2_weights_tf_dim_ordering_tf_kernels_notop.h5'
 # pylint: enable=line-too-long
 
 # VGG_M-esque model

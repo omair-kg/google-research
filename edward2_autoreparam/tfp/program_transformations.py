@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Lint as: python2, python3
 """Transformations of Edward2 programs."""
 # pylint: disable=missing-docstring
 
@@ -27,9 +28,9 @@ import six
 import tensorflow as tf
 
 from tensorflow_probability import bijectors as tfb
-from tensorflow_probability.python.edward2.generated_random_variables import Normal
-from tensorflow_probability.python.edward2.interceptor import interceptable
-from tensorflow_probability.python.edward2.interceptor import interception
+from tensorflow_probability.python.experimental.edward2.generated_random_variables import Normal
+from tensorflow_probability.python.experimental.edward2.interceptor import interceptable
+from tensorflow_probability.python.experimental.edward2.interceptor import interception
 
 __all__ = [
     'make_log_joint_fn', 'make_variational_model', 'make_value_setter', 'ncp',
@@ -339,7 +340,7 @@ def _get_function_inputs(f, **kwargs):
   try:  # getargspec was deprecated in Python 3.6
     argspec = inspect.getfullargspec(f)
   except AttributeError:
-    argspec = inspect.getargspec(f)
+    argspec = inspect.getargspec(f)  # pylint: disable=deprecated-method
 
   fkwargs = {k: v for k, v in six.iteritems(kwargs) if k in argspec.args}
   return fkwargs
