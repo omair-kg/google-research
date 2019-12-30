@@ -40,6 +40,7 @@ def get_pretrained_ckpt(network):
       'Resnet50_pretrained': CONFIG.MODEL.RESNET_PRETRAINED_WEIGHTS,
   }
   ckpt = pretrained_paths.get(network, None)
+  print(ckpt)
   return ckpt
 
 
